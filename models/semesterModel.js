@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const schema = mongoose.Schema;
 
-const firstSemSchema = new schema(
+const semesterSchema = new schema(
   {
     name: {
       type: String,
@@ -16,7 +16,9 @@ const firstSemSchema = new schema(
       type: String,
       required: true,
     },
-
+    semester: {
+      type: Number,
+    },
     subject: {
       type: String,
     },
@@ -33,7 +35,7 @@ const firstSemSchema = new schema(
     attendence: {
       type: Number,
     },
-    internalMark: {
+    internal: {
       type: Number,
     },
     total: {
@@ -46,4 +48,4 @@ const firstSemSchema = new schema(
   }
 );
 
-module.exports = mongoose.model("internalMarks", firstSemSchema);
+module.exports = mongoose.model("internalmarks", semesterSchema);

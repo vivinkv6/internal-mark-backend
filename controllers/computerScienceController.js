@@ -1,45 +1,102 @@
-const  mongoose  = require('mongoose');
-const internalMarks=require('../models/semesterModel');
+const mongoose = require("mongoose");
+const internalmarks = require("../models/semesterModel");
 
+//get all computer science student results
 
-const computerScienceStudents=async(req,res)=>{
+const computerScienceStudents = async (req, res) => {
+  const data = await internalmarks
+    .find({ department: "Computer Science" })
+    .sort({ createdAt: -1 });
+  if (data.length == 0) {
+    return res.json({ mssg: "No Result" });
+  }
+  res.json(data);
+};
 
-    const data=await internalMarks.find({});
+//get first sem computer science student results
 
-    if(!data.length > 0)
-    {
-        return res.json({mssg:"empty database"});
-    }
-    res.json(data);
+const firstSemComputerScienceStudents = async (req, res) => {
+  const data = await internalmarks.find({
+    department: "Computer Science",
+    semester: 1,
+  });
+  if (data.length == 0) {
+    return res.json({ mssg: "No Result" });
+  }
+  res.json(data);
+};
 
-}
+//get second sem computer science student results
 
-const computerScienceStudent=async(req,res)=>{
+const secondSemComputerScienceStudents = async (req, res) => {
+  const data = await internalmarks.find({
+    department: "Computer Science",
+    semester: 2,
+  });
+  if (data.length == 0) {
+    return res.json({ mssg: "No Result" });
+  }
+  res.json(data);
+};
 
-    const{id}=req.params;
+//get third sem computer science student results
 
-    if(!mongoose.Types.ObjectId.isValid(id))
-    {
-        return res.json({err:"invalid id"});
-    }
-    const data=await internalMarks.findById({_id:id});
+const thirdSemComputerScienceStudents = async (req, res) => {
+  const data = await internalmarks.find({
+    department: "Computer Science",
+    semester: 3,
+  });
+  if (data.length == 0) {
+    return res.json({ mssg: "No Result" });
+  }
+  res.json(data);
+};
 
-    if(!data)
-    {
-        return res.json({err:"ID not found"});
-    }
+//get fourth sem computer science student results
 
-    res.json({data});
+const fourthSemComputerScienceStudents = async (req, res) => {
+  const data = await internalmarks.find({
+    department: "Computer Science",
+    semester: 4,
+  });
+  if (data.length == 0) {
+    return res.json({ mssg: "No Result" });
+  }
+  res.json(data);
+};
 
-}
+//get fifth sem computer science student results
 
+const fifthSemComputerScienceStudents = async (req, res) => {
+  const data = await internalmarks.find({
+    department: "Computer Science",
+    semester: 5,
+  });
+  if (data.length == 0) {
+    return res.json({ mssg: "No Result" });
+  }
+  res.json(data);
+};
 
+//get sixth sem computer science student results
 
+const sixthSemComputerScienceStudents = async (req, res) => {
+  const data = await internalmarks.find({
+    department: "Computer Science",
+    semester: 6,
+  });
+  if (data.length == 0) {
+    return res.json({ mssg: "No Result" });
+  }
+  res.json(data);
+};
 
-module.exports={
-    computerScienceStudents,
-    computerScienceStudent
-}
-
-
-
+module.exports = {
+  computerScienceStudents,
+  firstSemComputerScienceStudents,
+  secondSemComputerScienceStudents,
+  thirdSemComputerScienceStudents,
+  fourthSemComputerScienceStudents,
+  fifthSemComputerScienceStudents,
+  sixthSemComputerScienceStudents,
+};
