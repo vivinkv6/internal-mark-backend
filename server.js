@@ -7,6 +7,8 @@ const computerScienceRouter = require("./routes/computerScienceRoutes");
 const statisticsRouter = require("./routes/statisticsRoutes");
 const mathsRouter = require("./routes/mathsRouter");
 const psychologyRouter = require("./routes/psychologyRouter");
+const economics = require("./routes/economicsRouter");
+const english = require("./routes/englishRouter");
 const internalmarks = require("./models/semesterModel");
 
 app.use(express.json());
@@ -60,7 +62,8 @@ app.use("/api/computerscience", computerScienceRouter);
 app.use("/api/statistics", statisticsRouter);
 app.use("/api/maths", mathsRouter);
 app.use("/api/psychology", psychologyRouter);
-
+app.use("/api/economics", economics);
+app.use("/api/english", english);
 //mongodb connection
 mongoose
   .connect(process.env.MONGO_URI)
