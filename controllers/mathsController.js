@@ -5,7 +5,7 @@ const internalmarks = require("../models/semesterModel");
 
 const mathsStudents = async (req, res) => {
   const data = await internalmarks
-    .find({ department: "Mathematics With Data Science" })
+    .find({ department: "Mathematics" })
     .sort({ createdAt: -1 });
   if (data.length == 0) {
     return res.json({ mssg: "No Result" });
@@ -17,7 +17,7 @@ const mathsStudents = async (req, res) => {
 
 const firstSemMathsStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Mathematics With Data Science",
+    department: "Mathematics",
     semester: 1,
   });
   if (data.length == 0) {
@@ -30,7 +30,7 @@ const firstSemMathsStudents = async (req, res) => {
 
 const secondSemMathsStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Mathematics With Data Science",
+    department: "Mathematics",
     semester: 2,
   });
   if (data.length == 0) {
@@ -43,7 +43,7 @@ const secondSemMathsStudents = async (req, res) => {
 
 const thirdSemMathsStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Mathematics With Data Science",
+    department: "Mathematics",
     semester: 3,
   });
   if (data.length == 0) {
@@ -56,7 +56,7 @@ const thirdSemMathsStudents = async (req, res) => {
 
 const fourthSemMathsStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Mathematics With Data Science",
+    department: "Mathematics",
     semester: 4,
   });
   if (data.length == 0) {
@@ -69,7 +69,7 @@ const fourthSemMathsStudents = async (req, res) => {
 
 const fifthSemMathsStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Mathematics With Data Science",
+    department: "Mathematics",
     semester: 5,
   });
   if (data.length == 0) {
@@ -82,7 +82,7 @@ const fifthSemMathsStudents = async (req, res) => {
 
 const sixthSemMathsStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Mathematics With Data Science",
+    department: "Mathematics",
     semester: 6,
   });
   if (data.length == 0) {
