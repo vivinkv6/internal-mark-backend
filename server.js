@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
+
+//endpoints router
 const computerScienceRouter = require("./routes/computerScienceRouter");
 const statisticsRouter = require("./routes/statisticsRouter");
 const mathsRouter = require("./routes/mathsRouter");
@@ -14,9 +16,12 @@ const history = require("./routes/historyRouter");
 const malayalam = require("./routes/malayalamRouter");
 const politicalScience = require("./routes/politicalScienceRouter");
 const sanskrit = require("./routes/sanskritRouter");
+
+//models
 const internalmarks = require("./models/semesterModel");
 const updates = require("./models/updatesModel");
 
+//middleware
 app.use(express.json());
 app.use(cors());
 
