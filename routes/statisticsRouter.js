@@ -7,7 +7,7 @@ const {
   thirdSemStatisticsStudents,
   fourthSemStatisticsStudents,
   fifthSemStatisticsStudents,
-  sixthSemStatisticsStudents,
+  sixthSemStatisticsStudents
 } = require("../controllers/statisticsController");
 
 //get all statistics students result

@@ -7,7 +7,7 @@ const {
   thirdSemPsychologyStudents,
   fourthSemPsychologyStudents,
   fifthSemPsychologyStudents,
-  sixthSemPsychologyStudents,
+  sixthSemPsychologyStudents
 } = require("../controllers/psychologyController");
 
 //get all psychology students result

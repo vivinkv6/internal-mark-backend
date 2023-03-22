@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const internalmarks = require("../models/semesterModel");
 
-//get all statistics student results
+//get all History student results
 
-const statisticsStudents = async (req, res) => {
+const historyStudents = async (req, res) => {
   const data = await internalmarks
-    .find({ department: "Statistics" })
+    .find({ department: "History" })
     .sort({ createdAt: -1 });
   if (data.length == 0) {
     return res.json({ mssg: "No Result" });
@@ -13,11 +13,11 @@ const statisticsStudents = async (req, res) => {
   res.json(data);
 };
 
-//get first sem statistics student results
+//get first sem History student results
 
-const firstSemStatisticsStudents = async (req, res) => {
+const firstSemHistoryStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Statistics",
+    department: "History",
     semester: 1,
   });
   if (data.length == 0) {
@@ -26,11 +26,11 @@ const firstSemStatisticsStudents = async (req, res) => {
   res.json(data);
 };
 
-//get second sem statistics student results
+//get second sem History student results
 
-const secondSemStatisticsStudents = async (req, res) => {
+const secondSemHistoryStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Statistics",
+    department: "History",
     semester: 2,
   });
   if (data.length == 0) {
@@ -39,11 +39,11 @@ const secondSemStatisticsStudents = async (req, res) => {
   res.json(data);
 };
 
-//get third sem statistics student results
+//get third sem History student results
 
-const thirdSemStatisticsStudents = async (req, res) => {
+const thirdSemHistoryStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Statistics",
+    department: "History",
     semester: 3,
   });
   if (data.length == 0) {
@@ -52,11 +52,11 @@ const thirdSemStatisticsStudents = async (req, res) => {
   res.json(data);
 };
 
-//get fourth sem statistics student results
+//get fourth sem History student results
 
-const fourthSemStatisticsStudents = async (req, res) => {
+const fourthSemHistoryStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Statistics",
+    department: "History",
     semester: 4,
   });
   if (data.length == 0) {
@@ -65,11 +65,11 @@ const fourthSemStatisticsStudents = async (req, res) => {
   res.json(data);
 };
 
-//get fifth sem statistics student results
+//get fifth sem History student results
 
-const fifthSemStatisticsStudents = async (req, res) => {
+const fifthSemHistoryStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Statistics",
+    department: "History",
     semester: 5,
   });
   if (data.length == 0) {
@@ -78,11 +78,11 @@ const fifthSemStatisticsStudents = async (req, res) => {
   res.json(data);
 };
 
-//get sixth sem statistics student results
+//get sixth sem History student results
 
-const sixthSemStatisticsStudents = async (req, res) => {
+const sixthSemHistoryStudents = async (req, res) => {
   const data = await internalmarks.find({
-    department: "Statistics",
+    department: "History",
     semester: 6,
   });
   if (data.length == 0) {
@@ -92,11 +92,11 @@ const sixthSemStatisticsStudents = async (req, res) => {
 };
 
 module.exports = {
-  statisticsStudents,
-  firstSemStatisticsStudents,
-  secondSemStatisticsStudents,
-  thirdSemStatisticsStudents,
-  fourthSemStatisticsStudents,
-  fifthSemStatisticsStudents,
-  sixthSemStatisticsStudents
+  historyStudents,
+  firstSemHistoryStudents,
+  secondSemHistoryStudents,
+  thirdSemHistoryStudents,
+  fourthSemHistoryStudents,
+  fifthSemHistoryStudents,
+  sixthSemHistoryStudents
 };

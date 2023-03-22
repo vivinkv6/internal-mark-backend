@@ -98,5 +98,5 @@ module.exports = {
   thirdSemComputerScienceStudents,
   fourthSemComputerScienceStudents,
   fifthSemComputerScienceStudents,
-  sixthSemComputerScienceStudents,
+  sixthSemComputerScienceStudents
 };

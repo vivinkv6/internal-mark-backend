@@ -98,5 +98,5 @@ module.exports = {
   thirdSemEnglishStudents,
   fourthSemEnglishStudents,
   fifthSemEnglishStudents,
-  sixthSemEnglishStudents,
+  sixthSemEnglishStudents
 };

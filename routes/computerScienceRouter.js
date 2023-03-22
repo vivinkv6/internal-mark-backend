@@ -7,7 +7,7 @@ const {
   thirdSemComputerScienceStudents,
   fourthSemComputerScienceStudents,
   fifthSemComputerScienceStudents,
-  sixthSemComputerScienceStudents,
+  sixthSemComputerScienceStudents
 } = require("../controllers/computerScienceController");
 
 //get all computer science students result

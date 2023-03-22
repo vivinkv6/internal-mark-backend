@@ -9,40 +9,53 @@ const mathsRouter = require("./routes/mathsRouter");
 const psychologyRouter = require("./routes/psychologyRouter");
 const economics = require("./routes/economicsRouter");
 const english = require("./routes/englishRouter");
+const hindi = require("./routes/hindiRouter");
+const history = require("./routes/historyRouter");
+const malayalam=require('./routes/malayalamRouter');
+const politicalScience=require('./routes/politicalScienceRouter');
+const sanskrit=require('./routes/sanskritRouter');
 const internalmarks = require("./models/semesterModel");
 
 app.use(express.json());
 app.use(cors());
+
+
+
 //add students marks
-app.post("/add", async (req, res) => {
-  const {
-    name,
-    register_no,
-    subjectCode,
-    subject,
-    department,
-    semester,
-    assignment,
-    seminar,
-    attendence,
-    internal,
-    total,
-  } = req.body;
-  const data = await internalmarks.create({
-    name,
-    register_no,
-    subjectCode,
-    subject,
-    department,
-    semester,
-    assignment,
-    seminar,
-    attendence,
-    internal,
-    total,
+try {
+  app.post("/add", async (req, res) => {
+    const {
+      name,
+      register_no,
+      subjectCode,
+      subject,
+      department,
+      semester,
+      assignment,
+      seminar,
+      attendence,
+      internal,
+      total,
+    } = req.body;
+    const data = await internalmarks.create({
+      name,
+      register_no,
+      subjectCode,
+      subject,
+      department,
+      semester,
+      assignment,
+      seminar,
+      attendence,
+      internal,
+      total
+    });
+    res.json("submit successfully");
   });
-  res.json("submit successfully");
-});
+} catch (err) {
+  res.json({ err: "something went wrong please try again later" });
+}
+
 
 //get a student result
 app.post("/result", async (req, res) => {
@@ -64,6 +77,12 @@ app.use("/api/maths", mathsRouter);
 app.use("/api/psychology", psychologyRouter);
 app.use("/api/economics", economics);
 app.use("/api/english", english);
+app.use("/api/hindi", hindi);
+app.use("/api/history", history);
+app.use("/api/malayalam", malayalam);
+app.use("/api/politicalscience", politicalScience);
+app.use("/api/sanskrit", sanskrit);
+
 
 //mongodb connection
 mongoose

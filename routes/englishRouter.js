@@ -7,7 +7,7 @@ const {
   thirdSemEnglishStudents,
   fourthSemEnglishStudents,
   fifthSemEnglishStudents,
-  sixthSemEnglishStudents,
+  sixthSemEnglishStudents
 } = require("../controllers/englishController");
 
 //get all english students result
