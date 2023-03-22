@@ -1,34 +1,34 @@
 const express = require("express");
 const router = express.Router();
 const {
-    englishStudents,
-firstSemEnglishStudents,
-secondSemEnglishStudents,
-thirdSemEnglishStudents,
-fourthSemEnglishStudents,
-fifthSemEnglishStudents,
-sixthSemEnglishStudents
+  englishStudents,
+  firstSemEnglishStudents,
+  secondSemEnglishStudents,
+  thirdSemEnglishStudents,
+  fourthSemEnglishStudents,
+  fifthSemEnglishStudents,
+  sixthSemEnglishStudents,
 } = require("../controllers/englishController");
 
-//get all economics students result
+//get all english students result
 router.get("/", englishStudents);
 
-//get all firstsem economics student result
+//get all firstsem english student result
 router.get("/firstsem", firstSemEnglishStudents);
 
-//get all secondsem economics student result
+//get all secondsem english student result
 router.get("/secondsem", secondSemEnglishStudents);
 
-//get all thirdsem economics student result
+//get all thirdsem english student result
 router.get("/thirdsem", thirdSemEnglishStudents);
 
-//get all fourthsem economics student result
+//get all fourthsem english student result
 router.get("/fourthsem", fourthSemEnglishStudents);
 
-//get all fifthsem economics student result
+//get all fifthsem english student result
 router.get("/fifthsem", fifthSemEnglishStudents);
 
-//get all sixthsem economics student result
+//get all sixthsem english student result
 router.get("/sixthsem", sixthSemEnglishStudents);
 
 module.exports = router;

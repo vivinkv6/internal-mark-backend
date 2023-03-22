@@ -3,8 +3,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
-const computerScienceRouter = require("./routes/computerScienceRoutes");
-const statisticsRouter = require("./routes/statisticsRoutes");
+const computerScienceRouter = require("./routes/computerScienceRouter");
+const statisticsRouter = require("./routes/statisticsRouter");
 const mathsRouter = require("./routes/mathsRouter");
 const psychologyRouter = require("./routes/psychologyRouter");
 const economics = require("./routes/economicsRouter");
@@ -64,6 +64,7 @@ app.use("/api/maths", mathsRouter);
 app.use("/api/psychology", psychologyRouter);
 app.use("/api/economics", economics);
 app.use("/api/english", english);
+
 //mongodb connection
 mongoose
   .connect(process.env.MONGO_URI)

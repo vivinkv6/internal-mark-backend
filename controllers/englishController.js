@@ -92,11 +92,11 @@ const sixthSemEnglishStudents = async (req, res) => {
 };
 
 module.exports = {
-englishStudents,
-firstSemEnglishStudents,
-secondSemEnglishStudents,
-thirdSemEnglishStudents,
-fourthSemEnglishStudents,
-fifthSemEnglishStudents,
-sixthSemEnglishStudents
+  englishStudents,
+  firstSemEnglishStudents,
+  secondSemEnglishStudents,
+  thirdSemEnglishStudents,
+  fourthSemEnglishStudents,
+  fifthSemEnglishStudents,
+  sixthSemEnglishStudents,
 };
