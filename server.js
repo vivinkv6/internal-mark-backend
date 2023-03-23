@@ -76,12 +76,12 @@ app.post("/result", async (req, res) => {
 
 //add latest updates
 app.post("/publish", async (req, res) => {
-  const { msg } = req.body;
+  const { message } = req.body;
 
-  if (msg.length == 0) {
+  if (message.length == 0) {
     return res.json("Invalid message");
   }
-  const data = await updates.create({ msg });
+  const data = await updates.create({ message });
   res.json("Publish Successfully");
 });
 
