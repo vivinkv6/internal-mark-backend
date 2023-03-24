@@ -27,7 +27,7 @@ app.use(cors());
 
 //add students marks
 try {
-  app.post("/add", async (req, res) => {
+  app.post("/api/add", async (req, res) => {
     const {
       name,
       register_no,
@@ -61,7 +61,7 @@ try {
 }
 
 //get a student result
-app.post("/result", async (req, res) => {
+app.post("/api/result", async (req, res) => {
   const { register_no, department, semester } = req.body;
   const data = await internalmarks.findOne({
     register_no,
@@ -75,7 +75,7 @@ app.post("/result", async (req, res) => {
 });
 
 //add latest updates
-app.post("/publish", async (req, res) => {
+app.post("/api/publish", async (req, res) => {
   const { message } = req.body;
 
   if (message.length == 0) {
@@ -86,13 +86,13 @@ app.post("/publish", async (req, res) => {
 });
 
 //get latest updates
-app.get("/update", async (req, res) => {
+app.get("/api/update", async (req, res) => {
   const data = await updates.find({}).sort({ createdAt: -1 });
   res.json(data);
 });
 
 //admin access
-app.post("/admin", (req, res) => {
+app.post("/api/admin", (req, res) => {
   const { username, password } = req.body;
 
   if (
