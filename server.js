@@ -63,7 +63,7 @@ try {
 //get a student result
 app.post("/api/result", async (req, res) => {
   const { register_no, department, semester } = req.body;
-  const data = await internalmarks.findOne({
+  const data = await internalmarks.find({
     register_no,
     department,
     semester,
