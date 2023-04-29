@@ -60,7 +60,7 @@ try {
   res.json({ err: "something went wrong please try again later" });
 }
 
-//get a student result -->
+//get a student result 
 app.post("/api/result", async (req, res) => {
   const { register_no, department, semester } = req.body;
   const data = await internalmarks.find({
@@ -74,7 +74,58 @@ app.post("/api/result", async (req, res) => {
   res.json(data);
 });
 
+//update student result -->
 
+app.put("/api/result", async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.json("Invalid ID");
+  }
+
+  const data = await internalmarks.findByIdAndUpdate(
+    { _id: id },
+    { ...req.body }
+  );
+
+  if (!data) {
+    return res.json("Something went wrong please try again later");
+  }
+
+  res.json("Update Successfully");
+});
+
+//delete a student result
+
+app.delete("/api/result", async (req, res) => {
+  const { id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.json("Invalid ID");
+  }
+  const data = await internalmarks.findByIdAndDelete({ _id: id });
+
+  if (!data) {
+    return res.json("Something went wrong please try again later");
+  }
+  res.json("Delete Successfully");
+});
+
+//get a student subject mark
+
+app.get("/api/:id", async (req, res) => {
+  const { id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.json("Invalid ID");
+  }
+  const data = await internalmarks.findById({ _id: id });
+
+  if (!data) {
+    return res.json("Something went wrong please try again later");
+  }
+  res.json(data);
+});
+
+//-->
 
 //add latest updates
 app.post("/api/publish", async (req, res) => {
