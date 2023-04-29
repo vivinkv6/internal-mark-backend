@@ -112,7 +112,7 @@ app.delete("/api/result", async (req, res) => {
 
 //get a student subject mark
 
-app.get("/api/mark", async (req, res) => {
+app.get("/api/:id", async (req, res) => {
   const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.json("Invalid ID");
